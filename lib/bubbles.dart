@@ -118,12 +118,16 @@ class Bubble {
 
   updatePosition() {
     var a = 180 - (direction + 90);
-    direction > 0 && direction < 180
+    if (x != null) {
+      direction > 0 && direction < 180
         ? x += speed * sin(direction) / sin(speed)
         : x -= speed * sin(direction) / sin(speed);
-    direction > 90 && direction < 270
+    }
+    if (y != null) {
+      direction > 90 && direction < 270
         ? y += speed * sin(a) / sin(speed)
         : y -= speed * sin(a) / sin(speed);
+    }
   }
 
   randomlyChangeDirectionIfEdgeReached(Size canvasSize) {
