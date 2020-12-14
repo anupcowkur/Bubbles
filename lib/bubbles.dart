@@ -30,11 +30,11 @@ class _BubblesState extends State<Bubbles> with SingleTickerProviderStateMixin {
 
     // Init animation controller
     _controller = new AnimationController(
-        duration: const Duration(seconds: 1000), vsync: this);
+        duration: const Duration(seconds: 1), vsync: this);
     _controller.addListener(() {
       updateBubblePosition();
     });
-    _controller.forward();
+    _controller.repeat();
   }
 
   @override
