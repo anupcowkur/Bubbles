@@ -47,8 +47,7 @@ class _BubblesState extends State<Bubbles> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomPaint(
-        foregroundPainter:
-            BubblePainter(bubbles: bubbles, controller: _controller),
+        foregroundPainter: BubblePainter(bubbles: bubbles),
         size: Size(MediaQuery.of(context).size.width,
             MediaQuery.of(context).size.height),
       ),
@@ -63,9 +62,8 @@ class _BubblesState extends State<Bubbles> with SingleTickerProviderStateMixin {
 
 class BubblePainter extends CustomPainter {
   List<Bubble> bubbles;
-  AnimationController controller;
 
-  BubblePainter({this.bubbles, this.controller});
+  BubblePainter({this.bubbles});
 
   @override
   void paint(Canvas canvas, Size canvasSize) {
